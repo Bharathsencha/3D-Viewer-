@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "online3dviewer",
-  "version": "0.1.5",
+  "productName": "3D File Viewer",
+  "version": "0.1.6",
   "identifier": "com.bharathsencha.3dviewer",
   "build": {
     "frontendDist": "../tauri-dist",
@@ -11,10 +11,11 @@
   "app": {
     "windows": [
       {
-        "title": "Online 3D Viewer",
-        "width": 800,
-        "height": 600,
+        "title": "3D Viewer",
+        "width": 1920,
+        "height": 1080,
         "resizable": true,
+        "maximized": true,
         "fullscreen": false
       }
     ],
