@@ -54,7 +54,8 @@
 		"build_website_dev": "esbuild source/website/index.js --bundle --minify --global-name=OV --sourcemap --loader:.ttf=file --loader:.woff=file --loader:.svg=file --outfile=build/website_dev/o3dv.website.min.js",
 		"build_website": "esbuild source/website/index.js --bundle --minify --global-name=OV --loader:.ttf=file --loader:.woff=file --loader:.svg=file --outfile=build/website/o3dv.website.min.js",
 		"build_shell": "cd shell && npm run build",
-		"build_tauri": "npm run create_package && npm run build_shell && rm -rf tauri-dist && mkdir -p tauri-dist/build/package/website && cp -r shell/dist/* tauri-dist/ && cp -r build/package/website/* tauri-dist/build/package/website/ && cp -r assets/* tauri-dist/assets/",
+		"build_tauri_prepare": "node -e \"const fs = require('fs'); const path = require('path'); const dir = 'tauri-dist'; if (fs.existsSync(dir)) { fs.rmSync(dir, { recursive: true }); } fs.mkdirSync(path.join(dir, 'build/package/website'), { recursive: true });\"",
+		"build_tauri": "npm run create_package && npm run build_shell && npm run build_tauri_prepare && node tools/copy-dist.js",
 		"update_engine_exports": "run-python3 tools/update_engine_exports.py",
 		"tauri": "tauri"
 	},
