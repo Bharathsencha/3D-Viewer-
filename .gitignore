@@ -1,0 +1,18 @@
+build/
+plugins/
+node_modules/
+__pycache__/
+dist/
+music/
+
+# Tauri
+src-tauri/target/
+tauri-dist/
+
+# Shell frontend
+shell/node_modules/
+shell/dist/
+
+# Logs & temp
+*.log
+.DS_Store
