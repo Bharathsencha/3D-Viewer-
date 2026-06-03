@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "online3dviewer",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.bharathsencha.3dviewer",
   "build": {
     "frontendDist": "../tauri-dist",
     "beforeDevCommand": "npm run build_tauri",
